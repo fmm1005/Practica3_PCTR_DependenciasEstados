@@ -5,17 +5,37 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Clase ActividadEntradaPuerta.
+ *
+ * @author Alvaro López Pereda
+ * @author Francisco Medel Molinero
+ */
 public class ActividadEntradaPuerta implements Runnable{
 
+		/** Constante NUMENTRADAS. */
 		private static final int NUMENTRADAS = 20;
+		
+		/** Puerta. */
 		private String puerta;
+		
+		/** Parque. */
 		private IParque parque;
 
+		/**
+		 * Constructor de la clase.
+		 *
+		 * @param puerta la puerta
+		 * @param parque el parque
+		 */
 		public ActividadEntradaPuerta(String puerta, IParque parque) {
 			this.puerta = puerta;
 			this.parque = parque;
 		}
 
+		/**
+		 * Run.
+		 */
 		@Override
 		public void run() {
 			for (int i = 0; i < NUMENTRADAS; i ++) {
